@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Jabatan - Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #2f4f6f;
+            color: #fff;
+            position: fixed;
+            height: 100vh;
+            padding: 20px;
+        }
+        .sidebar-heading {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li:hover {
+            background-color: #1d3b5f;
+        }
+        .list-group-item {
+            color: #fff;
+            background-color: transparent;
+        }
+        .list-group-item.active, .list-group-item-action.active {
+            background-color: #1d3b5f;
+        }
+
+        /* Header */
+        .dashboard-header {
+            background-color: #1976d2;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Content Styling */
+        .container {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #1976d2;
+            color: white;
+        }
+        table td {
+            color: #333;
+        }
+
+        /* Buttons */
+        .add-button, .pagination button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            border: none;
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Action Icons */
+        .edit, .delete {
+            color: #1976d2;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        /* Pagination */
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-heading d-flex align-items-center p-3">
+            <img src="univ.png" alt="Logo" width="50" class="mr-2">
+            <span>Universitas Pamulang</span>
+        </div>
+        <div class="list-group list-group-flush">
+            <div class="p-3">
+                <p>Welcome, Pramudia<br><small>Administrator</small></p>
+            </div>
+            <a href="dashboard.html" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-home mr-2"></i> Dashboard</a>
+            <p class="ml-3">Jabatan</p>
+            <a href="datakaryawan.html" class="list-group-item list-group-item-action active"><i class="fas fa-users mr-2"></i> Karyawan</a>
+            <a href="jabatan.html" class="list-group-item list-group-item-action"><i class="fas fa-briefcase mr-2"></i> Jabatan</a>
+            <a href="divisi.html" class="list-group-item list-group-item-action"><i class="fas fa-building mr-2"></i> Divisi</a>
+            <p class="ml-3">MENU ABSENSI</p>
+            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-calendar-alt mr-2"></i> Absensi</a>
+            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-clock mr-2"></i> Izin</a>
+            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-business-time mr-2"></i> Lembur</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="dashboard-header">Data Jabatan</div>
+        <button class="add-button">+ Tambah Jabatan</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Jabatan</th>
+                    <th>Jabatan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>JAB001</td>
+                    <td>Kepala Bagian</td>
+                    <td>
+                        <a href="#" class="edit">✏️</a>
+                        <a href="#" class="delete">❌</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>JAB002</td>
+                    <td>Kepala Sub Bagian</td>
+                    <td>
+                        <a href="#" class="edit">✏️</a>
+                        <a href="#" class="delete">❌</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>JAB003</td>
+                    <td>Staff</td>
+                    <td>
+                        <a href="#" class="edit">✏️</a>
+                        <a href="#" class="delete">❌</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>JAB004</td>
+                    <td>Wakil I</td>
+                    <td>
+                        <a href="#" class="edit">✏️</a>
+                        <a href="#" class="delete">❌</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button class="previous">Previous</button>
+            <span>1</span>
+            <button class="next">Next</button>
+        </div>
+    </div>
+</body>
+</html>
